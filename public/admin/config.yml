@@ -6,15 +6,29 @@ backend:
   auth_endpoint: /api/auth
 media_folder: public/uploads
 public_folder: /uploads
+# collections:
+#   - name: "docs" # 集合名称
+#     label: "文档" # 在 CMS 中的显示标签
+#     folder: "src/content/docs" # 文档存储的根目录
+#     create: true # 允许从 CMS 创建新文档
+#     nested: # 启用嵌套文件夹支持
+#       depth: 2 # 允许的子文件夹层级（可根据需要调整）
+#     slug: "{{slug}}" # 文件名生成方式
+#     fields:
+#       - { label: "标题", name: "title", widget: "string" } # 标题字段
+#       - { label: "描述", name: "description", widget: "text" } # 描述字段
+#       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
 collections:
-  - name: "docs" # 集合名称
-    label: "文档" # 在 CMS 中的显示标签
-    folder: "src/content/docs" # 文档存储的根目录
-    create: true # 允许从 CMS 创建新文档
-    nested: # 启用嵌套文件夹支持
-      depth: 2 # 允许的子文件夹层级（可根据需要调整）
-    slug: "{{slug}}" # 文件名生成方式
+  - name: "docs"
+    label: "文档"
+    folder: "src/content/docs"
+    create: true
+    slug: "{{folder | slug }}/{{slug}}"
     fields:
-      - { label: "标题", name: "title", widget: "string" } # 标题字段
-      - { label: "描述", name: "description", widget: "text" } # 描述字段
-      - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
+      - { label: "分类夹层", name: "folder", widget: "string", hint: "放置于哪个文件夹，在侧边栏形成夹层"}
+      - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
+        # 使用排序和过滤等功能来提高可用性
+
+    filter: "folder"   # 按文件夹过滤文章，避免杂乱
