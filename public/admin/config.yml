@@ -23,12 +23,8 @@ collections:
     label: "文档"
     folder: "src/content/docs"
     create: true
-    slug: "{{folder | slug }}/{{slug}}"
+    slug: "{{title}}" # 使用标题字段生成路径
     fields:
-      - { label: "标题", name: "title", widget: "string" }
+      - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
-      - { label: "分类夹层", name: "folder", widget: "string", hint: "放置于哪个文件夹，在侧边栏形成夹层"}
       - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
-        # 使用排序和过滤等功能来提高可用性
-
-    filter: "folder"   # 按文件夹过滤文章，避免杂乱
