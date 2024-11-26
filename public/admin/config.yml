@@ -28,7 +28,6 @@ collections:
 #       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
 # 价格行为学基础
-collections:
   - name: "Basic"
     label: "Basic"
     folder: "src/content/docs/basic"
