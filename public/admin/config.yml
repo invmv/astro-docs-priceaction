@@ -6,15 +6,33 @@ backend:
   auth_endpoint: /api/auth
 media_folder: public/uploads
 public_folder: /uploads
+#HOME
 collections:
-  - name: "docs"
-    label: "文档"
+  - name: "home"
+    label: "home"
     folder: "src/content/docs"
     create: true
-    slug: "{{slug}}" # 新文档默认 slug
-    nested:          # 启用嵌套分类结构
-      depth: 4      # 允许的嵌套级别
-      summary: '{{title}}' 
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      
+# collections:
+#   - name: "docs"
+#     label: "文档"
+#     folder: "src/content/docs"
+#     create: true
+#     fields:
+#       - { name: "title", label: "标题", widget: "string" }
+#       - { name: "description", label: "描述", widget: "text" }
+#       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+
+# 价格行为学基础
+collections:
+  - name: "Basic"
+    label: "Basic"
+    folder: "src/content/docs/basic"
+    create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
       - { name: "description", label: "描述", widget: "text" }
