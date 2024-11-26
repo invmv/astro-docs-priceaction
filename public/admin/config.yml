@@ -46,4 +46,4 @@ collections:
       path:
         widget: string
         label: 'Path'
-        index_file: ''  # 禁用文件夹默认文件
+        index_file: '{{title}}'  # 禁用文件夹默认文件
