@@ -36,9 +36,9 @@ collections:
     folder: src/content/docs
     create: true
     nested:
-      depth: 5  # 支持嵌套的最大深度
-      summary: "{{title}}"  # 在目录树中显示文章标题
-    identifier_field: title
+      depth: 5  # 支持嵌套的最大层级
+      summary: "{{title}}"  # 文件夹和文件节点显示的内容
+    slug: "{{title | slug}}"  # 自动生成文件
     fields:
       - { label: "标题", name: "title", widget: "string" } # 标题字段
       - { label: "描述", name: "description", widget: "text" } # 描述字段
