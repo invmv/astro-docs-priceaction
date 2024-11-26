@@ -35,10 +35,15 @@ collections:
     label: docs
     folder: src/content/docs
     create: true
-    slug: "{{title | slug}}"  # 文件名自动生成为标题的 slug 格式
     nested:
-      depth: 5
+      depth: 5  # 支持嵌套的最大深度
+      summary: "{{title}}"  # 在目录树中显示文章标题
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
-      - { label: Body, name: body, widget: markdown, modes: ["raw","rich_text"] }
+      - { label: "标题", name: "title", widget: "string" } # 标题字段
+      - { label: "描述", name: "description", widget: "text" } # 描述字段
+      - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
+    meta:
+      path:
+        widget: string
+        label: 'Path'
+        index_file: false  # 禁用文件夹默认文件
