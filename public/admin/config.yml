@@ -6,43 +6,6 @@ backend:
   auth_endpoint: /api/auth
 media_folder: public/uploads
 public_folder: /uploads
-# collections:
-#   - name: "docs" # 集合名称
-#     label: "文档" # 在 CMS 中的显示标签
-#     folder: "src/content/docs" # 文档存储的根目录
-#     create: true # 允许从 CMS 创建新文档
-#     nested: # 启用嵌套文件夹支持
-#       depth: 2 # 允许的子文件夹层级（可根据需要调整）
-#     slug: "{{slug}}" # 文件名生成方式
-#     fields:
-#       - { label: "标题", name: "title", widget: "string" } # 标题字段
-#       - { label: "描述", name: "description", widget: "text" } # 描述字段
-#       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
-# collections:
-#   - name: "docs"
-#     label: "文档"
-#     folder: "src/content/docs"
-#     create: true
-#     slug: "{{title | split: '/' | first }}/{{title | split: '/' | last | slug }}"  # 使用标题字段生成路径
-#     nested: # 启用嵌套文件夹支持
-#       depth: 2 # 允许的子文件夹层级（可根据需要调整）
-#     fields:
-#       - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
-#       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
-#       - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
-# collections:
-#   - name: docs
-#     label: docs
-#     folder: src/content/docs
-#     create: true
-#     nested:
-#       depth: 5  # 支持嵌套的最大层级
-#       summary: "{{title}}"  # 文件夹和文件节点显示的内容
-#     slug: "{{title | slug}}"  # 自动生成文件
-#     fields:
-#       - { label: "标题", name: "title", widget: "string" } # 标题字段
-#       - { label: "描述", name: "description", widget: "text" } # 描述字段
-#       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
 collections:
   - name: "docs"
     label: "文档"
@@ -51,7 +14,8 @@ collections:
     slug: "{{slug}}" # 新文档默认 slug
     nested:          # 启用嵌套分类结构
       depth: 4      # 允许的嵌套级别
+      summary: '{{title}}' 
     fields:
       - { name: "title", label: "标题", widget: "string" }
       - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
