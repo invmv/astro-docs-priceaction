@@ -2,7 +2,7 @@ backend:
   name: github
   repo: invmv/astro-docs-priceaction
   branch: main # Branch to update (optional; defaults to master)
-  base_url: https://docs.invmy.us.kg
+  base_url: https://docs.invmy.us.kg/
   auth_endpoint: /api/auth
 media_folder: public/uploads
 public_folder: /uploads
