@@ -24,6 +24,8 @@ collections:
     folder: "src/content/docs"
     create: true
     slug: "{{title | split: '/' | first }}/{{title | split: '/' | last | slug }}"  # 使用标题字段生成路径
+    nested: # 启用嵌套文件夹支持
+      depth: 2 # 允许的子文件夹层级（可根据需要调整）
     fields:
       - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
