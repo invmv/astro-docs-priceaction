@@ -30,16 +30,28 @@ public_folder: /uploads
 #       - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
 #       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
 #       - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
+# collections:
+#   - name: docs
+#     label: docs
+#     folder: src/content/docs
+#     create: true
+#     nested:
+#       depth: 5  # 支持嵌套的最大层级
+#       summary: "{{title}}"  # 文件夹和文件节点显示的内容
+#     slug: "{{title | slug}}"  # 自动生成文件
+#     fields:
+#       - { label: "标题", name: "title", widget: "string" } # 标题字段
+#       - { label: "描述", name: "description", widget: "text" } # 描述字段
+#       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
 collections:
-  - name: docs
-    label: docs
-    folder: src/content/docs
+  - name: "docs"
+    label: "文档"
+    folder: "src/content/docs"
     create: true
-    nested:
-      depth: 5  # 支持嵌套的最大层级
-      summary: "{{title}}"  # 文件夹和文件节点显示的内容
-    slug: "{{title | slug}}"  # 自动生成文件
+    slug: "{{slug}}" # 新文档默认 slug
+    nested:          # 启用嵌套分类结构
+      depth: 4      # 允许的嵌套级别
     fields:
-      - { label: "标题", name: "title", widget: "string" } # 标题字段
-      - { label: "描述", name: "description", widget: "text" } # 描述字段
-      - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown" }
