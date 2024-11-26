@@ -38,11 +38,8 @@ collections:
     nested:
       depth: 5  # 支持嵌套的最大深度
       summary: "{{title}}"  # 在目录树中显示文章标题
+    identifier_field: title
     fields:
       - { label: "标题", name: "title", widget: "string" } # 标题字段
       - { label: "描述", name: "description", widget: "text" } # 描述字段
       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
-    meta:
-      path:
-        widget: string
-        label: 'Path'
