@@ -42,8 +42,3 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
       - { label: Body, name: body, widget: markdown, modes: ["raw","rich_text"] }
-    meta:
-      path:
-        widget: string
-        label: 'Path'
-        index_file: "{{title | slug}}"  # 自动将标题转为 slug 格式作为默认文件名
