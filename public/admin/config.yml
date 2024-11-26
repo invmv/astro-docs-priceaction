@@ -18,15 +18,32 @@ public_folder: /uploads
 #       - { label: "标题", name: "title", widget: "string" } # 标题字段
 #       - { label: "描述", name: "description", widget: "text" } # 描述字段
 #       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
+# collections:
+#   - name: "docs"
+#     label: "文档"
+#     folder: "src/content/docs"
+#     create: true
+#     slug: "{{title | split: '/' | first }}/{{title | split: '/' | last | slug }}"  # 使用标题字段生成路径
+#     nested: # 启用嵌套文件夹支持
+#       depth: 2 # 允许的子文件夹层级（可根据需要调整）
+#     fields:
+#       - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
+#       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
+#       - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
 collections:
-  - name: "docs"
-    label: "文档"
-    folder: "src/content/docs"
+  - name: docs
+    label: docs
+    folder: src/content/docs
     create: true
-    slug: "{{title | split: '/' | first }}/{{title | split: '/' | last | slug }}"  # 使用标题字段生成路径
-    nested: # 启用嵌套文件夹支持
-      depth: 2 # 允许的子文件夹层级（可根据需要调整）
+    slug: "{{title | slug}}"  # 文件名自动生成为标题的 slug 格式
+    nested:
+      depth: 5
     fields:
-      - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
+      - { label: Title, name: title, widget: string }
       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
-      - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
+      - { label: Body, name: body, widget: markdown, modes: ["raw","rich_text"] }
+    meta:
+      path:
+        widget: string
+        label: 'Path'
+        index_file: "{{title | slug}}"  # 自动将标题转为 slug 格式作为默认文件名
