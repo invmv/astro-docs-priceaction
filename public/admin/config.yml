@@ -30,33 +30,19 @@ public_folder: /uploads
 #       - { label: "标题", name: "title", widget: "string", hint: "请输入文件路径，例如 分类/文章名 表示存入分类，生成 文章名.md" }
 #       - { label: "描述", name: "description", widget: "text", hint: "SEO搜索优化需要" }
 #       - { label: "正文字段", name: "body", widget: "markdown", modes: ["raw","rich_text"] }
-# collections:
-#   - name: docs
-#     label: docs
-#     folder: src/content/docs
-#     create: true
-#     nested:
-#       depth: 5  # 支持嵌套的最大深度
-#       summary: "{{title}}"  # 在目录树中显示文章标题
-#     fields:
-#       - { label: "标题", name: "title", widget: "string" } # 标题字段
-#       - { label: "描述", name: "description", widget: "text" } # 描述字段
-#       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
-#     meta:
-#       path:
-#         widget: string
-#         label: 'Path'
-#         index_file: "{{title}}"  # 禁用文件夹默认文件
 collections:
   - name: docs
     label: docs
     folder: src/content/docs
     create: true
-    slug: "{{slug}}"  # 自定义文件名
     nested:
       depth: 5  # 支持嵌套的最大深度
-      summary: "{{title}}"  # 在嵌套视图中显示文章标题
+      summary: "{{title}}"  # 在目录树中显示文章标题
     fields:
       - { label: "标题", name: "title", widget: "string" } # 标题字段
       - { label: "描述", name: "description", widget: "text" } # 描述字段
       - { label: "正文字段", name: "body", widget: "markdown" } # 正文字段
+    meta:
+      path:
+        widget: string
+        label: 'Path'
