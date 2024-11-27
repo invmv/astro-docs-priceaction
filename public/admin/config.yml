@@ -6,17 +6,6 @@ backend:
   auth_endpoint: /api/auth
 media_folder: public/uploads
 public_folder: /uploads
-#HOME
-collections:
-  - name: "home"
-    label: "home"
-    folder: "src/content/docs"
-    create: true
-    fields:
-      - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
-      
 # collections:
 #   - name: "docs"
 #     label: "文档"
@@ -26,11 +15,46 @@ collections:
 #       - { name: "title", label: "标题", widget: "string" }
 #       - { name: "description", label: "描述", widget: "text" }
 #       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+collections:
+  - name: "Home"
+    label: "Home"
+    folder: "src/content/docs"
+    create: true
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
-# 价格行为学基础
   - name: "Basic"
     label: "Basic"
     folder: "src/content/docs/basic"
+    create: true
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+
+  - name: "Rule"
+    label: "Rule"
+    folder: "Rule/content/docs/rule"
+    create: true
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+
+  - name: "trade"
+    label: "trade"
+    folder: "Rule/content/docs/trade"
+    create: true
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+
+  - name: "other"
+    label: "other"
+    folder: "Rule/content/docs/other"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
