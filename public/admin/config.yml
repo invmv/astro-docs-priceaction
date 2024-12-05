@@ -36,7 +36,7 @@ collections:
 
   - name: "Rule"
     label: "Rule"
-    folder: "Rule/content/docs/rule"
+    folder: "src/content/docs/rule"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
@@ -45,7 +45,7 @@ collections:
 
   - name: "trade"
     label: "trade"
-    folder: "Rule/content/docs/trade"
+    folder: "src/content/docs/trade"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
@@ -54,7 +54,7 @@ collections:
 
   - name: "other"
     label: "other"
-    folder: "Rule/content/docs/other"
+    folder: "src/content/docs/other"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
