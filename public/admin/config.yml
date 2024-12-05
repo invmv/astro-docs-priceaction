@@ -7,17 +7,17 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 # collections:
-#   - name: "docs"
-#     label: "文档"
-#     folder: "src/content/docs"
+#   - name: ""
+#     label: ""
+#     folder: "src/content/"
 #     create: true
 #     fields:
 #       - { name: "title", label: "标题", widget: "string" }
 #       - { name: "description", label: "描述", widget: "text" }
 #       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 collections:
-  - name: "Home"
-    label: "Home"
+  - name: "pages"
+    label: "pages"
     folder: "src/content/docs"
     create: true
     fields:
@@ -25,17 +25,26 @@ collections:
       - { name: "description", label: "描述", widget: "text" }
       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
-  - name: "Basic"
-    label: "Basic"
-    folder: "src/content/docs/basic"
+  - name: "more"
+    label: "more"
+    folder: "src/content/more"
+    create: true
+    fields:
+      - { name: "title", label: "标题", widget: "string" }
+      - { name: "description", label: "描述", widget: "text" }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      
+  - name: "Traders"
+    label: "Traders"
+    folder: "src/content/docs/traders"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
       - { name: "description", label: "描述", widget: "text" }
       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
-  - name: "Rule"
-    label: "Rule"
+  - name: "rule"
+    label: "rule"
     folder: "src/content/docs/rule"
     create: true
     fields:
@@ -43,18 +52,18 @@ collections:
       - { name: "description", label: "描述", widget: "text" }
       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
-  - name: "trade"
-    label: "trade"
-    folder: "src/content/docs/trade"
+  - name: "basic"
+    label: "basic"
+    folder: "src/content/docs/basic"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
       - { name: "description", label: "描述", widget: "text" }
       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
 
-  - name: "other"
-    label: "other"
-    folder: "src/content/docs/other"
+  - name: "trading"
+    label: "trading"
+    folder: "src/content/docs/trading"
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
