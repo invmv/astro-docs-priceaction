@@ -13,8 +13,7 @@ public_folder: /uploads
 #     create: true
 #     fields:
 #       - { name: "title", label: "标题", widget: "string" }
-#       - { name: "description", label: "描述", widget: "text" }
-#       - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+#       - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
 collections:
   - name: "pages"
     label: "pages"
@@ -22,8 +21,7 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
 
   - name: "more"
     label: "more"
@@ -31,8 +29,7 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
       
   - name: "Traders"
     label: "Traders"
@@ -40,8 +37,7 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
 
   - name: "rule"
     label: "rule"
@@ -49,8 +45,7 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
 
   - name: "basic"
     label: "basic"
@@ -58,8 +53,7 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
 
   - name: "trading"
     label: "trading"
@@ -67,5 +61,4 @@ collections:
     create: true
     fields:
       - { name: "title", label: "标题", widget: "string" }
-      - { name: "description", label: "描述", widget: "text" }
-      - { name: "body", label: "正文", widget: "markdown",modes: ["raw","rich_text"] }
+      - { name: "body", label: "正文", widget: "markdown",modes: ["rich_text","raw"] }
